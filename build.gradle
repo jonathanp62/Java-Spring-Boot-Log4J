@@ -70,6 +70,10 @@ dependencies {
 	}
 
 	implementation		('org.springframework.boot:spring-boot-starter-log4j2')
+
+	testImplementation	('org.springframework.boot:spring-boot-starter-test') {
+		exclude(group: 'org.springframework.boot', module: 'spring-boot-starter-logging')
+	}
 }
 
 tasks.withType(Javadoc).configureEach {
@@ -85,6 +89,8 @@ tasks.withType(Javadoc).configureEach {
 
 tasks.named('test') {
 	useJUnitPlatform()
+
+	testLogging.showStandardStreams = true
 
 	testLogging {
 		events "passed", "skipped", "failed"

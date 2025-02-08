@@ -1,7 +1,7 @@
 package net.jmp.spring.boot.log4j;
 
 /*
- * (#)Main.java 0.1.0   02/07/2025
+ * (#)TestMain.java 0.1.0   02/08/2025
  *
  * @author   Jonathan Parker
  *
@@ -28,55 +28,27 @@ package net.jmp.spring.boot.log4j;
  * SOFTWARE.
  */
 
-import static net.jmp.util.logging.LoggerUtils.entry;
-import static net.jmp.util.logging.LoggerUtils.exit;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.junit.jupiter.api.Test;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
-/// The main application class.
+import org.springframework.boot.test.context.SpringBootTest;
+
+/// The test class for the main class.
 ///
 /// @version    0.1.0
 /// @since      0.1.0
-@Component
-public class Main implements Runnable {
-    /// The logger.
-    private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+@SpringBootTest
+class TestMain {
+    @Autowired
+    private Main main;
 
-    /// The default constructor.
-    public Main() {
-        super();
-    }
+    @Test
+    void testGetMessage() {
+        final String message = this.main.getMessage();
 
-    ///
-    /// The run method.
-    @Override
-    public void run() {
-        if (this.logger.isTraceEnabled()) {
-            this.logger.trace(entry());
-        }
-
-        this.logger.info(this.getMessage());
-
-        if (this.logger.isTraceEnabled()) {
-            this.logger.trace(exit());
-        }
-    }
-
-    /// Returns the welcome message.
-    ///
-    /// @return java.lang.String
-    public String getMessage() {
-        if (this.logger.isTraceEnabled()) {
-            this.logger.trace(entry());
-        }
-
-        if (this.logger.isTraceEnabled()) {
-            this.logger.trace(exit());
-        }
-
-        return "Welcome to Spring Boot using Log4J";
+        assertThat(message).isEqualTo("Welcome to Spring Boot using Log4J");
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
- (#)log4j2-spring.xml   0.1.0   02/08/2025
+ (#)log4j2-test.xml 0.1.0   02/08/2025
 
  @author   Jonathan Parker
  @version  0.1.0
@@ -38,23 +38,13 @@
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <RollingFile name="FileAppender" fileName="${log-path}/app.log"
-                     filePattern="${log-path}/app-%d{yyyy-MM-dd}-%i.log">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
-            <Policies>
-                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
-                <SizeBasedTriggeringPolicy size="10 MB"/>
-            </Policies>
-        </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="net.jmp.spring.boot.log4j" level="info" additivity="false">
+        <Logger name="net.jmp.spring.boot.log4j" level="trace" additivity="false">
             <AppenderRef ref="ConsoleAppender"/>
-            <AppenderRef ref="FileAppender"/>
         </Logger>
         <Root level="info">
             <AppenderRef ref="ConsoleAppender"/>
-            <AppenderRef ref="FileAppender"/>
         </Root>
     </Loggers>
 </Configuration>
