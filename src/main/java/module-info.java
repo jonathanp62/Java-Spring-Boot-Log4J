@@ -32,8 +32,11 @@
 module Spring.Boot.Log4J.main {
     requires logging.utilities;
     requires org.slf4j;
+    requires spring.beans;
     requires spring.boot;
     requires spring.boot.autoconfigure;
     requires spring.context;
     requires spring.core;
+
+    opens net.jmp.spring.boot.log4j to spring.beans, spring.context, spring.core;
 }

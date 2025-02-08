@@ -4,5 +4,6 @@ build
 gradle/*
 !gradle/libs.versions.toml
 gradlew
+logs
 out
 target
