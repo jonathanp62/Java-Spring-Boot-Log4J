@@ -1,8 +1,9 @@
 #
+# (#)libs.versions.toml 0.2.0   02/11/2025
 # (#)libs.versions.toml 0.1.0   02/07/2025
 #
 #  @author   Jonathan Parker
-#  @version  0.1.0
+#  @version  0.2.0
 #  @since    0.1.0
 #
 #  MIT License
@@ -28,9 +29,9 @@
 # SOFTWARE.
 
 [versions]
-net-jmp-util-logging-logging-utilities = "1.2.0"
+net-jmp-jonathan-jonathan-starter = "1.13.0"
 
 [libraries]
-net-jmp-util-logging-logging-utilities = { module = "net.jmp.util.logging:logging-utilities", version.ref = "net-jmp-util-logging-logging-utilities" }
+net-jmp-jonathan-jonathan-starter = { module = "net.jmp.jonathan:jonathan-starter", version.ref = "net-jmp-jonathan-jonathan-starter" }
 
 [bundles]

@@ -13,7 +13,8 @@ Gradle JavaExec Tasks
 |bootRunDev             |No arguments
 |bootRunTest            |No arguments
 |bootRunProd            |No arguments
+|bootTestRun            |No arguments
 |=======================
 
-Current version: 0.1.0.
+Current version: 0.2.0.
 ~~~~~~~~~~~~~~~~~~~~~~~

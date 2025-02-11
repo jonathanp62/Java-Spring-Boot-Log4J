@@ -1,8 +1,9 @@
 /*
+ * (#)build.gradle  0.2.0   02/11/2025
  * (#)build.gradle  0.1.0   02/07/2025
  *
  * @author   Jonathan Parker
- * @version  0.1.0
+ * @version  0.2.0
  * @since    0.1.0
  *
  * MIT License
@@ -41,7 +42,7 @@ plugins {
 }
 
 group = 'net.jmp.spring.boot.log4j'
-version = '0.1.0'
+version = '0.2.0'
 description = 'Spring-Boot-Log4J'
 
 println "The groupId is ${project.group}"
@@ -63,7 +64,7 @@ repositories {
 }
 
 dependencies {
-	implementation		(libs.net.jmp.util.logging.logging.utilities)
+	implementation      (libs.net.jmp.jonathan.jonathan.starter)
 
 	implementation		('org.springframework.boot:spring-boot-starter') {
 		exclude(group: 'org.springframework.boot', module: 'spring-boot-starter-logging')
