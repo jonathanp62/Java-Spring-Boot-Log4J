@@ -66,6 +66,8 @@ repositories {
 dependencies {
 	implementation      (libs.net.jmp.jonathan.jonathan.starter)
 
+	/* Excluded modules from spring-boot-starter must be excluded from all starters */
+
 	implementation		('org.springframework.boot:spring-boot-starter') {
 		exclude(group: 'org.springframework.boot', module: 'spring-boot-starter-logging')
 	}
